@@ -10,6 +10,6 @@ inputs:
     path: azureml:diabetes-dev-folder:1
   reg_rate: 0.01
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
-compute: azureml:diabetes_compute
+compute: azureml:myCompute
 experiment_name: diabetes-model-train
 description: Training a classification diabetes model using a registered data asset as input.
