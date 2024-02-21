@@ -1,5 +1,5 @@
 {
-    "name": "<your-workspace-name>",
-    "resource_group": "<your-resource-group-name>",
+    "name": "MLOpsWS",
+    "resource_group": "myResourceGroup",
     "create_workspace": true
 }
