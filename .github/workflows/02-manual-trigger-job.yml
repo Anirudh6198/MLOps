@@ -2,6 +2,12 @@ name: Manually trigger an Azure Machine Learning job
 
 on:
   workflow_dispatch:
+env:
+  workspace-name: MLOpsWS # name of the Azure Machine Learning workspace
+  resource-group: myResourceGroup # name of the Azure resource group
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   train:
@@ -15,5 +21,6 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
-
+    - name: Trigger Azure ML job
+      run: az ml job create --file job.yml --workspace-name ${{ env.workspace-name }} --resource-group ${{ env.resource-group }}
 
