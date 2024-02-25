@@ -1,13 +1,14 @@
 name: Manually trigger an Azure Machine Learning job
 
 on:  
+  # existing code
   workflow_dispatch:
   # new code
   pull_request:
     branches: [main]
 env:
-  workspace-name: MLOpsWS # name of the Azure Machine Learning workspace
-  resource-group: myResourceGroup # name of the Azure resource group
+  workspace-name: MLOpsWS # name of the Azure Machine Learning workspace.
+  resource-group: myResourceGroup # name of the Azure resource group.
 permissions:
   id-token: write
   contents: read
