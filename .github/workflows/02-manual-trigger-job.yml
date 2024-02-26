@@ -5,11 +5,9 @@ on:
   # new code
   pull_request:
     branches: [main]
-    
 env:
   workspace-name: MLOpsWS # name of the Azure Machine Learning workspace
   resource-group: myResourceGroup # name of the Azure resource group
-
 permissions:
   id-token: write
   contents: read
