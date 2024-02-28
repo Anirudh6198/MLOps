@@ -6,9 +6,9 @@ on:
     types: [labeled]
  
 env:
-  workspace-name: myWorkspace # name of the Azure Machine Learning workspace
+  workspace-name: MLOpsWS # name of the Azure Machine Learning workspace
   resource-group: myResourceGroup # name of the Azure resource group
-  job-name: nice_tail_rft4v2h14b # name of the job that contains the model
+  job-name: calm_pin_7fwlt7xzpq # name of the job that contains the model
   model-name: my-model # name of the model
  
 permissions:
@@ -34,7 +34,7 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       - name: Trigger Azure ML job
-        run: az ml model create --name ${{ env.model-name }} --path azureml://jobs/${{ env.job-name }}/outputs/artifacts/paths/model/ --type mlflow_model --workspace-name ${{ env.workspace-name }} --resource-group ${{ env.resource-group }}
+        run: az ml model create --name ${{ env.model-name }} --path azureml://jobs/${{ env.job-name }}/outputs/model/ --type mlflow_model --workspace-name ${{ env.workspace-name }} --resource-group ${{ env.resource-group }}
   create-endpoint:
     name: Create Endpoint
     if: github.event.label.name == 'create-endpoint'
