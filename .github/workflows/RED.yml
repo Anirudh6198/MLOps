@@ -8,7 +8,7 @@ on:
 env:
   workspace-name: myWorkspace # name of the Azure Machine Learning workspace
   resource-group: myResourceGroup # name of the Azure resource group
-  job-name: nice_tail_rft4v2h14b # name of the job that contains the model
+  job-name: calm_pin_7fwlt7xzpq  # name of the job that contains the model
   model-name: my-model # name of the model
  
 permissions:
