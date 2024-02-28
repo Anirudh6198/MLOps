@@ -9,7 +9,7 @@ env:
   workspace-name: MLOpsWS # name of the Azure Machine Learning workspace
   resource-group: myResourceGroup # name of the Azure resource group
   job-name: calm_pin_7fwlt7xzpq # name of the job that contains the model
-  model-name: my-model # name of the model
+  model-name: diabetes-model # name of the model
  
 permissions:
   id-token: write
