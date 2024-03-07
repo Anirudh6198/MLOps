@@ -72,7 +72,7 @@ jobs:
   data-asset:
     name: data_asset
     runs-on: ubuntu-latest
-    needs: [unit-test]
+    needs: [create-compute]
     environment:
       name: Dev
     steps:
