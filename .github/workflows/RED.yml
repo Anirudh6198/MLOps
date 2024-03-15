@@ -17,7 +17,7 @@ permissions:
  
 jobs:
   register-model:
-    if: github.event.label.name == 'register-model'
+    # if: github.event.label.name == 'register-model'
     name: Register Model
     runs-on: ubuntu-latest
     environment:
@@ -37,7 +37,7 @@ jobs:
         run: az ml model create --name ${{ env.model-name }} --path azureml://jobs/${{ env.job-name }}/outputs/artifacts/paths/model/ --type mlflow_model --workspace-name ${{ env.workspace-name }} --resource-group ${{ env.resource-group }}
   create-endpoint:
     name: Create Endpoint
-    if: github.event.label.name == 'create-endpoint'
+    # if: github.event.label.name == 'create-endpoint'
     runs-on: ubuntu-latest
     environment:
       name: prod
@@ -56,7 +56,7 @@ jobs:
         run: az ml online-endpoint create -f src/create-endpoint.yml --workspace-name ${{ env.workspace-name }} --resource-group ${{ env.resource-group }}
   deploy-model:
     name: Deploy Model
-    if: github.event.label.name == 'deploy-model'
+    # if: github.event.label.name == 'deploy-model'
     runs-on: ubuntu-latest
     environment:
       name: prod
