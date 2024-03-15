@@ -2,8 +2,10 @@
 name: Deploy Model
  
 on:
-  pull_request_target:
-    types: [labeled]
+  # pull_request_target:
+  #   types: [labeled]
+  pull_request:
+    branches: [main]
  
 env:
   workspace-name: MLOpsWS # name of the Azure Machine Learning workspace
